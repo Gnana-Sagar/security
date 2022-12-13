@@ -27,4 +27,9 @@ public class HomeController {
         return dbService.validateOtp(phone, otp);
     }
 
+    @GetMapping("/api/test")
+    public String testApi() {
+        return "You are authenticated";
+    }
+
 }

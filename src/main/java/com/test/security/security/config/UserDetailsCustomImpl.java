@@ -21,7 +21,7 @@ public class UserDetailsCustomImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserDomain domain = dbService.getByPhoneNumber(username);
-        if(domain != null) {
+        if(domain == null) {
             throw new UsernameNotFoundException("User not found");
         }
         return new User(
